@@ -19,15 +19,17 @@ return new class extends Migration
 
         Schema::create('genero', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50)->unique();
+            $table->enum('name', ['Female', 'Masculine'])->unique();
             $table->timestamps();
         });
 
         Schema::create('superhero', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50)->unique();
+            $table->string('name', 100)->unique();
+            $table->string('real_name', 100);
+            $table->enum('gender', ['Female', 'Masculine']);
             $table->foreignId('universo_id')->constrained('universo')->onDelete('cascade');
-            $table->foreignId('genero_id')->constrained('genero')->onDelete('cascade');
+            $table->string('picture')->nullable();
             $table->timestamps();
         });
     }
