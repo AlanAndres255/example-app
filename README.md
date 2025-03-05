@@ -1,5 +1,9 @@
-# Actividad 7
-<img src="./public/Act7.png" alt="License">
+# Actividad 8
+<img src="./public/actividad8.png" alt="License">
+<img src="./public/act8-2.png" alt="License">
+<img src="./public/act8-3.png" alt="License">
+<img src="./public/act8-4.png" alt="License">
+
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
