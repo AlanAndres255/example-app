@@ -11,8 +11,8 @@ return new class extends Migration
     {
         Schema::create('genders', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 1)->unique(); // 'f' for feminine, 'm' for masculine
-            $table->timestamps();
+            $table->string('name', 50)->unique();
+            $table->timestamps();  
         });
     }
 

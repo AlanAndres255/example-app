@@ -11,9 +11,13 @@ class UniverseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
-        Universe::create(['name' => 'Marvel']);
-        Universe::create(['name' => 'DC']);
+        Universe::create([
+            'name' => 'Marvel',
+        ]);
+        Universe::create([
+            'name' => 'DC',
+        ]);
     }
 }

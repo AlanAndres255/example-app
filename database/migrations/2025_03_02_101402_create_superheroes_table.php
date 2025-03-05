@@ -11,11 +11,11 @@ return new class extends Migration
     {
         Schema::create('superheroes', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50)->unique(); // required
+            $table->string('name', 50)->unique(); 
             $table->string('real_name', 50)->nullable();
             $table->foreignId('gender_id')->constrained('genders')->onDelete('cascade');
             $table->foreignId('universe_id')->constrained('universes')->onDelete('cascade');
-            $table->string('picture', 200)->nullable(); // link
+            $table->string('picture', 200)->nullable(); 
             $table->timestamps();
         });
     }
