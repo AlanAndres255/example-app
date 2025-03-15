@@ -10,4 +10,13 @@ class SuperHero extends Model
     use HasFactory;
 
     protected $table = 'superheroes';
+
+    protected $fillable = [
+        'gender_id',
+        'real_name',
+        'universe_id',
+        'name',
+        'picture'
+    ];
+    
 }

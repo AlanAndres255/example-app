@@ -1,18 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Gender;
+use App\Models\Universe;
+
 use Illuminate\Http\Request;
 
-class GenderController extends Controller
+class UniverseController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $genders = Gender::all();
-        return view('genders.index',compact('genders'));
+        $universes = Universe::all();
+        return view('universes.index',compact('universes'));
     }
 
     /**
@@ -20,7 +21,7 @@ class GenderController extends Controller
      */
     public function create()
     {
-        return view('genders.create');
+        return view('universes.create');
     }
 
     /**
@@ -28,10 +29,10 @@ class GenderController extends Controller
      */
     public function store(Request $request)
     {
-       Gender::create([
+       Universe::create([
               'name' => $request->name
        ]);
-       return to_route('genders.index');
+       return to_route('universes.index');
     }
 
     /**
@@ -39,8 +40,8 @@ class GenderController extends Controller
      */
     public function show(string $id)
     {
-        $gender = Gender::find($id);
-        return view('genders.show', compact('gender'));
+        $universes = Universe::find($id);
+        return view('universes.show',compact('universes'));
     }
 
     /**

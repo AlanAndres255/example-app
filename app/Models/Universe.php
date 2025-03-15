@@ -10,4 +10,8 @@ class Universe extends Model
     use HasFactory;
 
     protected $table = 'universes';
+
+    protected $fillable = [
+        'name',
+    ];
 }

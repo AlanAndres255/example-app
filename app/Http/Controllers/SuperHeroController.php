@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 use App\Models\Gender;
+use App\Models\Universe;
+use App\Models\SuperHero;
 use Illuminate\Http\Request;
 
-class GenderController extends Controller
+class SuperHeroController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $genders = Gender::all();
-        return view('genders.index',compact('genders'));
+        $superheroes = SuperHero::all();
+        return view('superhero.index',compact('superheroes'));
     }
 
     /**
@@ -20,18 +22,24 @@ class GenderController extends Controller
      */
     public function create()
     {
-        return view('genders.create');
+        $genders = Gender::select('id', 'name')->get();
+        $universes = Universe::select('id', 'name')->get();
+        return view('superhero.create', compact('genders', 'universes'));
     }
-
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-       Gender::create([
-              'name' => $request->name
-       ]);
-       return to_route('genders.index');
+        SuperHero::create([
+            "gender_id" => $request->gender_id,
+            "real_name" => $request->real_name,
+            "universe_id" => $request->universe_id,
+            "name" => $request->name,
+            "picture" => $request->picture,            
+        ]);
+    
+        return redirect()->route('superhero.index');
     }
 
     /**
@@ -39,8 +47,8 @@ class GenderController extends Controller
      */
     public function show(string $id)
     {
-        $gender = Gender::find($id);
-        return view('genders.show', compact('gender'));
+        $superheroes = SuperHero::find($id);
+        return view('superhero.show',compact('superheroes'));
     }
 
     /**
