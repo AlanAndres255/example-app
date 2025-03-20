@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Gender;
+use GMP;
 use Illuminate\Http\Request;
 
 class GenderController extends Controller
@@ -48,7 +49,8 @@ class GenderController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $gender = Gender::find($id);
+        return view('genders.edit',compact('gender'));
     }
 
     /**
@@ -56,7 +58,14 @@ class GenderController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request -> validate([
+            'name' => 'required|string|max:255',
+        ]);
+        $gender = Gender::findOrFail($id);
+        $gender->update([
+            'name' => $request->name
+        ]);
+        return redirect()->route('genders.index');
     }
 
     /**
@@ -64,6 +73,8 @@ class GenderController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $gender = Gender::findOrFail($id);
+        $gender->delete();
+        return redirect()->route('genders.index');
     }
 }

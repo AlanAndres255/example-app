@@ -18,5 +18,15 @@ class SuperHero extends Model
         'name',
         'picture'
     ];
+
+    public function gender()
+    {
+        return $this->belongsTo(Gender::class);
+    }
+
+    public function universe()
+    {
+        return $this->belongsTo(Universe::class);
+    }
     
 }

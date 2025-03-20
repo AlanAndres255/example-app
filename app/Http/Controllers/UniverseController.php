@@ -49,7 +49,8 @@ class UniverseController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $universes = Universe::find($id);
+        return view('universes.edit',compact('universes'));
     }
 
     /**
@@ -57,7 +58,16 @@ class UniverseController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+    
+        $universes = Universe::findOrFail($id);
+        $universes->update([
+            'name' => $request->name,
+        ]);
+    
+        return redirect()->route('universes.index');
     }
 
     /**
@@ -65,6 +75,8 @@ class UniverseController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $universes = Universe::findOrFail($id);
+        $universes->delete();
+        return redirect()->route('universes.index');
     }
 }

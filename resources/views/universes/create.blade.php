@@ -11,8 +11,10 @@
         @csrf
         <label for="">Name</label>
         <input type="text" name="name">
-
+        <br><br>
         <button type="submit">Create Universe</button>
     </form>
+    <br><br>
+    <button><a href="{{route('universes.index')}}">Back</a></button>
 </body>
 </html>

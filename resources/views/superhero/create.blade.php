@@ -15,24 +15,26 @@
                 <option value="{{ $gender->id }}">{{ $gender->name }}</option>
             @endforeach
         </select>
-        <br>
+        <br><br>
         <label for="">Universe</label>
         <select name="universe_id">
             @foreach($universes as $universe)
                 <option value="{{ $universe->id }}">{{ $universe->name }}</option>
             @endforeach
         </select>
-        <br>
+        <br><br>
         <label for="">Real Name</label>
         <input type="text" name="real_name">
-        <br>
+        <br><br>
         <label for="">Superhero Name</label>
         <input type="text" name="name">
-        <br>
+        <br><br>
         <label for="">Picture URL</label>
         <input type="text" name="picture">
-        <br>
+        <br><br>
         <input type="submit" value="Create">
     </form>
+    <br><br>
+    <button><a href="{{route('superhero.index')}}">Back</a></button>
 </body>
 </html>

@@ -11,8 +11,10 @@
         @csrf
         <label for="">Name</label>
         <input type="text" name="name" required>
-        <br>
+        <br><br>
         <button type="submit">Create Genders</button>
     </form>
+    <br><br>
+    <button><a href="{{route('genders.index')}}">Back</a></button>
 </body>
 </html>
