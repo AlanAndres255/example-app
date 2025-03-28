@@ -29,6 +29,7 @@
                         @csrf
                         @method('delete')
                         <input type="submit" value="Delete" onclick="return confirm('Are you sure?')">
+                    </form>
                 </tr>
                 @endforeach
             </tbody>
