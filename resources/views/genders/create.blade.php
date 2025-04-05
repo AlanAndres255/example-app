@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Gender</title>
-</head>
-<body>
+@extends('layouts.main')
+@section('title','Create Gender')
+@section('content')
     <h1>Create Gender</h1>
     <form action="{{ route('genders.store') }}" method="post">
         @csrf
@@ -16,5 +11,4 @@
     </form>
     <br><br>
     <button><a href="{{route('genders.index')}}">Back</a></button>
-</body>
-</html>
+@endsection

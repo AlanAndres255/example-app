@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create SuperHero</title>
-</head>
-<body>
-    <h1>Create SuperHero</h1>
+@extends('layouts.main')
+@section('title', 'Create Superheros')
+@section('content')
+
+<h1>Create SuperHero</h1>
     <form action="{{ route('superhero.store') }}" method="post">
         @csrf
         <label for="">Gender</label>
@@ -36,5 +32,4 @@
     </form>
     <br><br>
     <button><a href="{{route('superhero.index')}}">Back</a></button>
-</body>
-</html>
+@endsection

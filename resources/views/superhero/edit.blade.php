@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit SuperHero</title>
-</head>
-<body>
-    <h1>Edit SuperHero</h1>
+@extends('layouts.main')
+@section('title', 'Edit SuperHero')
+@section('content')
+
+<h1>Edit SuperHero</h1>
     <form action="{{ route('superhero.update', $superheroes->id) }}" method="post">
         @csrf
         @method('patch')
@@ -45,5 +41,4 @@
     </form>
     <br><br>
     <button><a href="{{route('superhero.index')}}">Back</a></button>
-</body>
-</html>
+@endsection

@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gneder Test</title>
-</head>
-<body>
+@extends('layouts.main')
+@section('title','Gender')
+@section('content')
     <h1> Gender</h1>
     <hr>
     <a href="{{ route('genders.create') }}">Create Gender</a>
@@ -35,5 +30,4 @@
                 @endforeach
             </tbody>
         </table>
-</body>
-</html>
+@endsection
