@@ -12,12 +12,12 @@ class GenderApiController extends Controller
         return response()->json($genders);    
     }
 
-    /*public function show($id){
-        $universe = Universe::with('superheroes')->findOrFail($id);
-        return response()->json($universe);
-    }*/
-    public function show($name){
+    public function show($id){
+        $genders = Gender::with('superheroes')->findOrFail($id);
+        return response()->json($genders);
+    }
+    /*public function show($name){
         $gender = Gender::with('superheroes')->where('name', $name)->firstOrFail();
         return response()->json($gender);
-    }
+    }*/
 }

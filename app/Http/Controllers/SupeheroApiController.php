@@ -13,12 +13,12 @@ class SupeheroApiController extends Controller
         return response()->json($superheroes);    
     }
 
-    /*public function show($id){
-        $universe = Universe::with('superheroes')->findOrFail($id);
-        return response()->json($universe);
-    }*/
-    public function show($name){
-        $superhero = SuperHero::with('gender','universe')->where('name',$name)->firstOrFail();
+    public function show($id){
+        $superhero = SuperHero::with('gender','universe')->findOrFail($id);
         return response()->json($superhero);
     }
+    /*public function show($name){
+        $superhero = SuperHero::with('gender','universe')->where('name',$name)->firstOrFail();
+        return response()->json($superhero);
+    }*/
 }

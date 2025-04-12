@@ -12,12 +12,12 @@ class UniverseApiController extends Controller
         return response()->json($universes);    
     }
 
-    /*public function show($id){
+    public function show($id){
         $universe = Universe::with('superheroes')->findOrFail($id);
         return response()->json($universe);
-    }*/
-    public function show($name){
+    }
+    /*public function show($name){
         $universe = Universe::with('superheroes')->where('name', $name)->firstOrFail();
         return response()->json($universe);
-    }
+    }*/
 }
